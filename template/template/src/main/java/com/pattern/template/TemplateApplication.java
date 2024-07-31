@@ -26,6 +26,19 @@ public class TemplateApplication {
 
 		DataProcesser dataProcesser1 = new ExcelDataProcesser();
 		dataProcesser1.process();
+
+		System.out.println("_________________________________________________________");
+
+//		Meal Preparation Project
+
+		Meal meal = new Pasta();
+		meal.PrepareMeal();
+		System.out.println();
+
+		Meal meal1 = new Salad();
+		meal1.PrepareMeal();
+		System.out.println();
+
 	}
 
 }
