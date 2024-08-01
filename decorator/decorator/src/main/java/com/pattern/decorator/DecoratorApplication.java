@@ -1,6 +1,7 @@
 package com.pattern.decorator;
 
 import domain.*;
+import org.aspectj.weaver.ast.Not;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -43,6 +44,19 @@ public class DecoratorApplication {
 
 		Car car2 = new LeatherDecorator(car);
 		System.out.println(car2.description() + " $" + car2.cost());
+
+		System.out.println();
+
+//		Message Notification
+
+		Notifier notifier =  new BasicNotifier();
+		notifier.send("Hello!");
+
+		Notifier notifier1 = new SMSNotifier(notifier);
+		notifier1.send("Hello !!");
+
+		Notifier notifier2 = new EmailNotifier(notifier);
+		notifier2.send("Heelo !!!");
 	}
 
 }
