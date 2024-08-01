@@ -32,6 +32,17 @@ public class DecoratorApplication {
 
 		Pizza pizza2 = new PeppironPizza(pizza);
 		System.out.println(pizza2.descriptionO() + " $" + pizza2.cost());
+
+//		Car Application
+
+		Car car = new BasicCar();
+		System.out.println(car.description() + " $" + car.cost());
+
+		Car car1 = new AcDecorator(car);
+		System.out.println(car1.description() + " $" + car1.cost()) ;
+
+		Car car2 = new LeatherDecorator(car);
+		System.out.println(car2.description() + " $" + car2.cost());
 	}
 
 }
